@@ -111,6 +111,8 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .syn-list{display:flex;flex-wrap:wrap;gap:7px}
 .syn-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 12px;min-width:140px;flex:1}
 .syn-card .syn-word{font-weight:700;color:var(--accent);font-size:0.86rem;margin-bottom:2px}
+.syn-card .syn-word.clickable{cursor:pointer;border-bottom:1px dotted var(--accent);transition:color 0.15s}
+.syn-card .syn-word.clickable:hover{color:var(--text-strong);border-bottom-color:var(--text-strong)}
 .syn-card .syn-def-cn{font-size:0.76rem;color:var(--text);line-height:1.5}
 .syn-card .syn-def-jp{font-size:0.73rem;color:var(--jp);line-height:1.5}
 
@@ -217,12 +219,12 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
     <div id="backup-bar"><span class="bb-stat" id="bb-stat"></span><button class="bb-export" id="btn-export">📥 导出</button><button id="btn-import">📤 导入</button><span class="bb-sync" id="bb-sync"></span><input type="file" id="import-file" accept=".json" style="display:none"></div>
   </div>
   <div id="sentence-panel">
-    <div id="sent-input-wrap"><textarea id="sent-input" placeholder="输入一句英语，获得3个版本的自然中/日转述…"></textarea></div>
+    <div id="sent-input-wrap"><textarea id="sent-input" placeholder="输入中文、英文或日文，自动检测并翻译为另外两种语言…"></textarea></div>
     <div id="btn-translate-wrap"><button id="btn-translate">🔍 翻译句子</button></div>
   </div>
 </aside>
 <main id="main">
-  <div id="empty-state"><div class="icon">&#9876;</div><p>输入英语单词按 Enter 通过 AI 自动补全<br><small style="color:var(--text-muted)">渐进加载：释义 → 发音 → 例句</small></p></div>
+  <div id="empty-state"><div class="icon">&#9876;</div><p>输入中文、英文或日文，自动翻译为另外两种语言<br><small style="color:var(--text-muted)">每种翻译生成3个版本：标准 · 强硬 · 口语</small></p></div>
   <div id="detail"></div>
   <div id="sent-result"></div>
 </main>
@@ -487,7 +489,7 @@ var API = {
   translateSentence: function(text){
     if(API.busy||!text.trim()) return; API.busy = true;
     var $bt = document.getElementById('btn-translate'); $bt.disabled = true; $bt.textContent = '翻译中…';
-    API._call('翻译下面英语。生成3个版本的中文和日语转述——同一概念用不同语气语法重新表达，非直译。返回：{original,versions:[{label:"标准",zh,en,ja},{label:"强硬",zh,en,ja},{label:"口语",zh,en,ja}]}。ja汉字注假名。只JSON。','翻译：'+text,1800)
+    API._call('检测下面这句话的语言（中文/英文/日文），然后翻译成另外两种语言。每种翻译生成3版本转述——同一概念用不同语气语法重新表达，非直译。返回JSON：{detected:"zh"|"en"|"ja", original:"原句", versions:[{label:"标准",zh:"…",en:"…",ja:"…"},{label:"强硬",zh:"…",en:"…",ja:"…"},{label:"口语",zh:"…",en:"…",ja:"…"}]}。每个版本的三种语言都要填满。ja汉字注假名。只返回JSON。','翻译：'+text,2000)
     .then(function(d){
       Renderer.translationResult(d, text);
     }).catch(function(err){
@@ -554,12 +556,13 @@ var Renderer = {
       (sentsHtml?'<div class="section"><div class="section-title">武器句子 · 中→英→日</div>'+sentsHtml+'</div>':'')+
       (tagsHtml?'<div class="section"><div class="section-title">标签</div><div class="tags-row">'+tagsHtml+'</div>':'')+
       '<div style="margin-top:14px;"><button class="btn btn-secondary" onclick="Controller.editWord(\''+w.id+'\')" style="font-size:0.73rem;padding:4px 10px;">编辑</button></div>';
+    Renderer._bindSynonymClicks();
   },
 
   _synonyms: function(w){
     if(!w.synonyms||!w.synonyms.length) return '';
     return '<div class="syn-section"><div class="syn-title">近义词</div><div class="syn-list">'+
-      (w.synonyms||[]).map(function(sy){return'<div class="syn-card"><div class="syn-word">'+Util.esc(sy.word)+'</div><div class="syn-def-cn">'+Util.esc(sy.definitionCn||'')+'</div><div class="syn-def-jp">'+(sy.definitionJp?Util.furi(sy.definitionJp):'')+'</div></div>';}).join('')+
+      (w.synonyms||[]).map(function(sy){return'<div class="syn-card"><div class="syn-word clickable" data-syn-word="'+Util.esc(sy.word)+'">'+Util.esc(sy.word)+'</div><div class="syn-def-cn">'+Util.esc(sy.definitionCn||'')+'</div><div class="syn-def-jp">'+(sy.definitionJp?Util.furi(sy.definitionJp):'')+'</div></div>';}).join('')+
     '</div></div>';
   },
 
@@ -582,14 +585,23 @@ var Renderer = {
   // ── 句子翻译结果（3版本） ──
   translationResult: function(d, fallbackText){
     var $sr = document.getElementById('sent-result'), $d = document.getElementById('detail'), $e = document.getElementById('empty-state');
-    var versions = d.versions || [{label:'标准',zh:d.zh||'',en:d.original||fallbackText,ja:d.ja||''}];
-    var html = '<div class="sent-trans en"><div class="st-lang">🇬🇧 原文</div><div class="st-text">'+Renderer._makeClickable(d.original||fallbackText)+'</div></div>';
+    var detected = d.detected || 'en';
+    var langLabel = {zh:'🇨🇳 中文',en:'🇬🇧 英文',ja:'🇯🇵 日本語'};
+    var original = d.original || fallbackText;
+    // 原文：根据检测到的语言显示，英文可点击
+    var origClickable = detected==='en' ? Renderer._makeClickable(original) : Util.esc(original);
+    var html = '<div class="sent-trans" style="border-left:3px solid var(--accent)"><div class="st-lang">'+Util.esc(langLabel[detected]||'原文')+' · 原文</div><div class="st-text">'+origClickable+'</div></div>';
+    var versions = d.versions || [];
+    // 如果没有versions，兼容旧格式
+    if(!versions.length && d.zh) versions = [{label:'标准',zh:d.zh||'',en:d.original||fallbackText,ja:d.ja||''}];
     for(var i=0;i<versions.length;i++){
       var v = versions[i];
       html += '<div class="sent-version"><div class="sv-label">'+Util.esc(v.label||'版本'+(i+1))+'</div>';
-      html += '<div class="sent-trans cn"><div class="st-lang">🇨🇳 中文</div><div class="st-text">'+Util.esc(v.zh||'')+'</div></div>';
-      html += '<div class="sent-trans en"><div class="st-lang">🇬🇧 英文</div><div class="st-text">'+Renderer._makeClickable(v.en||'')+'</div></div>';
-      html += '<div class="sent-trans ja"><div class="st-lang">🇯🇵 日本語</div><div class="st-text">'+Util.furi(v.ja||'')+'</div></div></div>';
+      // 只显示非原文语言的翻译（如果原文是中文就不显示中文翻译卡，以此类推）
+      if(detected!=='zh') html += '<div class="sent-trans cn"><div class="st-lang">🇨🇳 中文</div><div class="st-text">'+Util.esc(v.zh||'')+'</div></div>';
+      if(detected!=='en') html += '<div class="sent-trans en"><div class="st-lang">🇬🇧 英文</div><div class="st-text">'+Renderer._makeClickable(v.en||'')+'</div></div>';
+      if(detected!=='ja') html += '<div class="sent-trans ja"><div class="st-lang">🇯🇵 日本語</div><div class="st-text">'+Util.furi(v.ja||'')+'</div></div>';
+      html += '</div>';
     }
     $sr.innerHTML = html;
     $sr.classList.add('visible');$sr.style.display='block';$d.classList.remove('visible');$d.style.display='none';$e.style.display='none';
@@ -604,6 +616,13 @@ var Renderer = {
   _bindClickable: function(){
     document.getElementById('sent-result').querySelectorAll('.clickable-word').forEach(function(el){
       el.addEventListener('click',function(e){ e.stopPropagation(); Controller.showPopover(el, el.dataset.word); });
+    });
+  },
+
+  // ── 近义词点击 ──
+  _bindSynonymClicks: function(){
+    document.getElementById('detail').querySelectorAll('.syn-word.clickable').forEach(function(el){
+      el.addEventListener('click',function(e){ e.stopPropagation(); Controller.showPopover(el, el.dataset.synWord); });
     });
   },
 
