@@ -11,18 +11,52 @@
     "mouthShape": "起始于‘de’：舌尖轻触上齿龈，口型微开，发出/d/，随后舌位降低，口型张开至中位发/ɛ/；过渡到‘co’：舌后部抬起，口型收圆发/k/，接着舌位向前，口型稍扁发/ə/；重音落在‘ra’：舌尖卷向上齿龈后部，口型张开发/r/，随后舌位降低，口型张大发/eɪ/；结尾‘tion’：舌尖抵住上齿龈发/ʃ/，口型收圆发/ə/，最后舌尖轻触上齿龈发/n/。",
     "voiceTechnique": "注意重音在第三个音节‘ra’，发音时需强调，声调略高且持续时间稍长。元音/eɪ/要饱满，双元音滑动明显。结尾的/ʃən/部分要轻柔，避免过度用力。整体语速适中，保持流畅。",
     "usageContext": "该词常用于正式或半正式场合，如描述房间装饰、节日布置或物品的装饰性元素。在口语中，重音位置需准确，以免误解为‘decorate’的派生形式。常见搭配有‘Christmas decoration’、‘interior decoration’等。",
-    "sentences": [],
-    "synonyms": [],
+    "sentences": [
+      {
+        "zh": "你搞什么鬼？这装饰品摆得歪七扭八的，看着就烦！",
+        "en": "What the hell are you doing? This decoration is all crooked and annoying to look at!",
+        "ja": "何（なに）やってんだよ！この飾（かざ）り、曲（ま）がっててムカつくんだよ！"
+      },
+      {
+        "zh": "别乱动我的装饰，那是我的宝贝，碰坏了你赔得起吗？",
+        "en": "Don't mess with my decoration, that's my treasure. Can you afford to break it?",
+        "ja": "俺（おれ）の飾（かざ）りを触（さわ）るなよ！大事（だいじ）なものだから、壊（こわ）したら弁償（べんしょう）できるのか？"
+      },
+      {
+        "zh": "这装饰也太土了吧，你是不是审美有问题？",
+        "en": "This decoration is so tacky, do you have a problem with your taste?",
+        "ja": "この飾（かざ）り、ダサすぎだろ！お前（まえ）、センスないんじゃね？"
+      }
+    ],
+    "synonyms": [
+      {
+        "word": "飾り",
+        "definitionCn": "装饰，装饰品。指用来点缀或美化物品、空间的东西。",
+        "definitionJp": "飾り。物や空間を美しく見せるために付けるもの。"
+      },
+      {
+        "word": "装飾",
+        "definitionCn": "装饰，装潢。强调为了美观而进行的整体布置或修饰。",
+        "definitionJp": "装飾。美しく見せるための飾り付けや模様。"
+      },
+      {
+        "word": "デコレーション",
+        "definitionCn": "装饰（外来语）。常用于蛋糕、房间等的华丽装饰。",
+        "definitionJp": "デコレーション。ケーキや部屋などを華やかに飾ること。"
+      },
+      {
+        "word": "飾り物",
+        "definitionCn": "装饰品。泛指用于装饰的物品，有时也指华而不实的东西。",
+        "definitionJp": "飾り物。飾りとして使うもの。時に見かけだけで役に立たないものを指すこともある。"
+      }
+    ],
     "tags": [
       "装饰",
       "家居",
       "节日",
       "勋章",
       "美化"
-    ],
-    "_loading": true,
-    "_phase": 70,
-    "_msg": "例句和近义词…"
+    ]
   },
   {
     "id": "mrgqem5l7dyxwv",
