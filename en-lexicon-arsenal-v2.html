@@ -426,6 +426,27 @@ var GitHub = {
       console.error('GitHub:',err);
       $sync.textContent = '⚠️ '+err.message; $sync.className = 'bb-sync error';
     });
+  },
+
+  // 启动时从 GitHub 拉取最新数据
+  pull: function(){
+    if(!GitHub.token) return;
+    var url = 'https://api.github.com/repos/' + CONFIG.GH_REPO + '/contents/' + CONFIG.GH_PATH;
+    fetch(url, {headers:{'Authorization':'Bearer '+GitHub.token,'Accept':'application/vnd.github+json'}}).then(function(r){
+      if(r.status===404) return null;
+      if(!r.ok) throw new Error('Pull: '+r.status);
+      return r.json();
+    }).then(function(d){
+      if(!d||!d.content) return;
+      var json = decodeURIComponent(escape(atob(d.content)));
+      var remote = JSON.parse(json);
+      if(!Array.isArray(remote)||!remote.length) return;
+      var map = {}; Store.words.forEach(function(w){ map[w.word.toLowerCase()] = w; });
+      remote.forEach(function(w){ map[w.word.toLowerCase()] = w; });
+      Store.words = Object.values(map); Store.save();
+      Renderer.list(''); if(Store.words.length) Renderer.detail(Store.words[0].id);
+      Util.toast('☁️ 已从 GitHub 同步 '+remote.length+' 个单词');
+    }).catch(function(err){ console.error('GitHub pull:',err); });
   }
 };
 
@@ -867,6 +888,7 @@ var Controller = {
 Store.load();
 Theme.init();
 GitHub.init();
+GitHub.pull();
 Modal.init();
 Backup.init();
 Controller.init();
