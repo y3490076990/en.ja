@@ -7,12 +7,49 @@
     "japaneseRomaji": "bajetto",
     "definitionCn": "预算，指预先计划好的一笔钱或花费安排",
     "definitionJp": "予算(よさん)、お金(かね)の使(つか)い方(かた)を事前(じぜん)に計画(けいかく)すること",
-    "detailedPhonetic": "",
-    "mouthShape": "",
-    "voiceTechnique": "",
-    "usageContext": "",
-    "sentences": [],
-    "synonyms": [],
+    "detailedPhonetic": "ˈbʌdʒɪt (巴-鸡特，重音在第一个音节)",
+    "mouthShape": "发‘巴’时双唇微张，舌尖抵下齿，然后快速过渡到‘鸡’，舌尖抬起抵住上齿龈，最后‘特’舌尖轻弹上齿龈后放开",
+    "voiceTechnique": "先短促有力地发‘巴’，声带振动，然后迅速转为轻快的‘鸡’，结尾‘特’需清脆不拖音",
+    "usageContext": "日常财务讨论、商务会议、旅行计划等场合",
+    "sentences": [
+      {
+        "zh": "你那个预算根本不够，别做梦了！",
+        "en": "Your budget is way too low, stop dreaming!",
+        "ja": "その予算（よさん）じゃ全然（ぜんぜん）足（た）りないよ、夢（ゆめ）を見（み）るな！"
+      },
+      {
+        "zh": "我说了要控制预算，你怎么又乱花钱？",
+        "en": "I told you to stick to the budget, why are you wasting money again?",
+        "ja": "予算（よさん）を守（まも）れって言（い）ったのに、また無駄遣（むだづか）いしてるの？"
+      },
+      {
+        "zh": "这点预算连买个面包都不够，你开什么玩笑？",
+        "en": "This budget can't even buy a loaf of bread, are you kidding me?",
+        "ja": "こんな予算（よさん）じゃパンひとつ買（か）えないよ、冗談（じょうだん）でしょ？"
+      }
+    ],
+    "synonyms": [
+      {
+        "word": "funds",
+        "definitionCn": "资金，指可用的钱",
+        "definitionJp": "資金（しきん）、使（つか）えるお金（かね）のこと"
+      },
+      {
+        "word": "allowance",
+        "definitionCn": "限额，指被允许花的钱",
+        "definitionJp": "許容額（きょようがく）、使（つか）っていいお金（かね）の上限（じょうげん）"
+      },
+      {
+        "word": "cost plan",
+        "definitionCn": "成本计划，指花钱的详细安排",
+        "definitionJp": "費用計画（ひようけいかく）、お金（かね）の使（つか）い方（かた）の詳（くわ）しい計画（けいかく）"
+      },
+      {
+        "word": "spending limit",
+        "definitionCn": "支出上限，指不能超过的钱数",
+        "definitionJp": "支出上限（ししゅつじょうげん）、超（こ）えてはいけないお金（かね）の額（がく）"
+      }
+    ],
     "tags": [
       "财务",
       "计划",
@@ -20,9 +57,7 @@
       "管理",
       "节俭"
     ],
-    "_loading": true,
-    "_loadPhase": 40,
-    "_loadMsg": "释义完成，正在加载发音指导…"
+    "_loadPhase": 100
   },
   {
     "id": "mrgqb9ch6vdbyc",
