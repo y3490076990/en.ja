@@ -7,10 +7,27 @@
     "japaneseRomaji": "fandazu",
     "definitionCn": "资金；基金；现金",
     "definitionJp": "資金（しきん）；基金（ききん）；現金（げんきん）",
-    "detailedPhonetic": "",
-    "mouthShape": "",
-    "voiceTechnique": "",
-    "usageContext": "",
+    "detailedPhonetic": {
+      "word": "Funds",
+      "pronunciation": "/fʌndz/",
+      "syllable": "1个音节",
+      "phoneticBreakdown": {
+        "initial": "/f/",
+        "vowel": "/ʌ/",
+        "final": "/ndz/"
+      }
+    },
+    "mouthShape": {
+      "initial_f": "上齿轻触下唇，气流从唇齿间挤出，声带不振动",
+      "vowel_ʌ": "嘴巴半开，舌头平放中部，嘴唇放松不圆，类似中文‘啊’但更短促",
+      "final_ndz": "舌尖抵上齿龈发/n/，然后迅速过渡到/dz/（舌尖抵上齿龈阻塞气流后爆破，声带振动），最后舌尖保持位置发/z/（气流持续摩擦）"
+    },
+    "voiceTechnique": {
+      "initial_f": "清辅音，声带不振动，气流持续",
+      "vowel_ʌ": "短元音，声带振动，声音集中在中部",
+      "final_ndz": "浊辅音组合，声带持续振动，注意/dz/的爆破和摩擦连贯"
+    },
+    "usageContext": "常用于金融或商业语境，表示资金或基金。例句：'The company needs more funds.'（公司需要更多资金。）发音时注意结尾/dz/清晰，避免吞音。",
     "sentences": [],
     "synonyms": [],
     "tags": [
@@ -21,8 +38,8 @@
       "经济"
     ],
     "_loading": true,
-    "_phase": 40,
-    "_msg": "发音指导…"
+    "_phase": 70,
+    "_msg": "例句和近义词…"
   },
   {
     "id": "1",
