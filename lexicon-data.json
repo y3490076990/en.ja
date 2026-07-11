@@ -1,0 +1,148 @@
+[
+  {
+    "id": "1",
+    "word": "sovereignty",
+    "ipa": "/ˈsɒv.rɪn.ti/",
+    "chinesePhonetic": "索弗润提",
+    "japaneseRomaji": "sovurinti",
+    "definitionCn": "主权；最高统治权；自己做主的权力",
+    "definitionJp": "主権(しゅけん)；自分(じぶん)のことを自分(じぶん)で決(き)める力(ちから)",
+    "detailedPhonetic": "sóv-rìn-tì → 索́弗润̀替̀",
+    "mouthShape": "双唇微收圆发/sɒ/，下唇触上齿→/v/，舌尖弹齿龈→/rɪn/，轻点齿背→/ti/。",
+    "voiceTechnique": "全程声带振动。/s/清辅音→/v/立刻启动声带。/ɒ/喉下沉口腔大开→/ɪ/收窄→/ti/气息减弱。",
+    "usageContext": "对方越界时。国际法、政治争论、个人底线。",
+    "sentences": [
+      {
+        "zh": "你没有资格在我的边界内立法——这不是谈判，是越界。",
+        "en": "You don't get to make rules inside my borders. That's not a negotiation.",
+        "ja": "あなたに私(わたし)の領分(りょうぶん)でルールを決(き)める資格(しかく)はない。それは話(はな)し合(あ)いじゃなくて、越権(えっけん)だよ。"
+      },
+      {
+        "zh": "主权不是靠共识授予的——它存在，直到有人用行动捍卫。",
+        "en": "Sovereignty isn't given by agreement. It exists until someone enforces it.",
+        "ja": "主権(しゅけん)って、誰(だれ)かの了解(りょうかい)でもらうものじゃない。誰(だれ)かが守(まも)り抜(ぬ)くまで、ただそこにあるんだ。"
+      },
+      {
+        "zh": "开口请求别人允许你掌控自己的地盘时，你已经输了。",
+        "en": "The moment you ask permission to control your own space, you've already lost it.",
+        "ja": "自分(じぶん)の場所(ばしょ)を支配(しはい)していいかって聞(き)いた時点(じてん)で、もう負(ま)けてるんだよ。"
+      }
+    ],
+    "synonyms": [
+      {
+        "word": "autonomy",
+        "definitionCn": "自治；自己说了算",
+        "definitionJp": "自治(じち)；自分(じぶん)で決(き)めること"
+      },
+      {
+        "word": "independence",
+        "definitionCn": "独立；不依赖别人",
+        "definitionJp": "独立(どくりつ)；頼(たよ)らないこと"
+      },
+      {
+        "word": "control",
+        "definitionCn": "掌控；支配",
+        "definitionJp": "支配(しはい)；コントロール"
+      }
+    ],
+    "tags": [
+      "权力",
+      "边界",
+      "独立"
+    ]
+  },
+  {
+    "id": "2",
+    "word": "rhetoric",
+    "ipa": "/ˈret.ər.ɪk/",
+    "chinesePhonetic": "瑞特里克",
+    "japaneseRomaji": "retorikku",
+    "definitionCn": "话术；修辞；漂亮的空话",
+    "definitionJp": "言葉遣(ことばづか)い；うまい話(はなし)；中身(なかみ)のない美(うつく)しい言葉(ことば)",
+    "detailedPhonetic": "ré-tə-rìk → 瑞́特呃瑞̀克",
+    "mouthShape": "舌尖抵上齿龈→/r/，嘴唇微拉→/e/半开，/t/弹齿龈，/ər/卷舌，/ɪk/嘴角收窄。",
+    "voiceTechnique": "/r/卷舌振动，/t/清爆破停顿，/ər/立即恢复。/ə/嘴巴完全放松。/k/清收。",
+    "usageContext": "政治分析、媒体批判。揭穿对方漂亮话里面的空洞。",
+    "sentences": [
+      {
+        "zh": "漂亮话底下没逻辑，不过是放烟花——亮是亮，不发热。",
+        "en": "Pretty words with no logic underneath are just fireworks. Bright, but no heat.",
+        "ja": "きれいな言葉(ことば)の下(した)に筋(すじ)が通(とお)ってないなら、ただの花火(はなび)だよ。光(ひか)るけど暖(あたた)かくない。"
+      },
+      {
+        "zh": "你的话术在表演理性，结论从一开头就定好了。",
+        "en": "Your words perform reasoning, but your conclusion was decided before you started.",
+        "ja": "あなたの話(はな)し方(かた)は理屈(りくつ)っぽく見(み)せるだけで、結論(けつろん)は最初(さいしょ)から決(き)まってるんだね。"
+      },
+      {
+        "zh": "别说那么花，说重点。",
+        "en": "Skip the decoration. Get to the point.",
+        "ja": "飾(かざ)りはいいから、要点(ようてん)を言(い)って。"
+      }
+    ],
+    "synonyms": [
+      {
+        "word": "eloquence",
+        "definitionCn": "口才；能说会道",
+        "definitionJp": "話(はな)し上手(じょうず)；口(くち)がうまいこと"
+      },
+      {
+        "word": "sophistry",
+        "definitionCn": "诡辩；歪理",
+        "definitionJp": "こじつけ；詭弁(きべん)"
+      }
+    ],
+    "tags": [
+      "语言",
+      "说服",
+      "欺骗"
+    ]
+  },
+  {
+    "id": "3",
+    "word": "premise",
+    "ipa": "/ˈprem.ɪs/",
+    "chinesePhonetic": "普瑞米斯",
+    "japaneseRomaji": "puremisu",
+    "definitionCn": "前提；出发点；你论证所站的那块地",
+    "definitionJp": "前提(ぜんてい)；話(はなし)の出発点(しゅっぱつてん)；土台(どだい)",
+    "detailedPhonetic": "pré-mìs → 普瑞́密̀斯",
+    "mouthShape": "双唇/p/爆破→卷舌/r/→半开/e/→闭/m/鼻音→窄/ɪ/→/s/气流。",
+    "voiceTechnique": "从/p/清爆不振动，/r/开始声带。尾音/s/清收干净。",
+    "usageContext": "辩论拆解第一步：拒绝前提，整个论证就塌了。",
+    "sentences": [
+      {
+        "zh": "我不接你的前提——你把结论藏在第一句话里了。",
+        "en": "I don't accept your starting point. You hid your conclusion in the first sentence.",
+        "ja": "その前提(ぜんてい)は受(う)け入(い)れられない。最初(さいしょ)の文(ぶん)に結論(けつろん)を隠(かく)してるじゃないか。"
+      },
+      {
+        "zh": "一旦你认了他们的前提，后面就只是算数。不认前提，全塌。",
+        "en": "Once you accept their premise, the rest is just arithmetic. Reject it, and it all falls.",
+        "ja": "相手(あいて)の前提(ぜんてい)を認(みと)めたら、あとは計算(けいさん)するだけ。前提(ぜんてい)を断(ことわ)れば全部(ぜんぶ)崩(くず)れる。"
+      },
+      {
+        "zh": "你的整场论证站在一个你自己都没想过要辩护的前提上。",
+        "en": "Your whole argument stands on a premise you never thought to defend.",
+        "ja": "あなたの議論(ぎろん)全体(ぜんたい)は、自分(じぶん)でも弁護(べんご)しようと思(おも)ったことがない前提(ぜんてい)の上(うえ)に立(た)ってるよ。"
+      }
+    ],
+    "synonyms": [
+      {
+        "word": "assumption",
+        "definitionCn": "假设；想当然",
+        "definitionJp": "仮定(かてい)；思(おも)い込(こ)み"
+      },
+      {
+        "word": "foundation",
+        "definitionCn": "地基；根基",
+        "definitionJp": "土台(どだい)；基礎(きそ)"
+      }
+    ],
+    "tags": [
+      "逻辑",
+      "辩论",
+      "批判思维"
+    ]
+  }
+]
