@@ -11,8 +11,45 @@
     "mouthShape": "先发“格”音，舌根抬起；再发“哼”音，舌尖抵下齿，口型略圆",
     "voiceTechnique": "法语小舌音，气流从喉咙小舌处摩擦发出，类似漱口声，但更轻柔",
     "usageContext": "用于法语单词或名称的发音指导，如种子、颗粒等含义",
-    "sentences": [],
-    "synonyms": [],
+    "sentences": [
+      {
+        "zh": "你撒的种子（graine）根本长不出好结果，别白费力气了！",
+        "en": "The seeds (graine) you planted won’t grow into anything good, stop wasting your effort!",
+        "ja": "お前（まえ）が撒（ま）いた種（たね）なんて、いい結果（けっか）出（だ）せないよ、無駄（むだ）だって！"
+      },
+      {
+        "zh": "这粒种子（graine）是坏的，就像你的主意一样，别拿来糊弄人！",
+        "en": "This seed (graine) is rotten, just like your idea—don’t try to fool anyone with it!",
+        "ja": "この種（たね）は腐（くさ）ってる、お前（まえ）のアイデアみたいにさ、ごまかすなよ！"
+      },
+      {
+        "zh": "连一颗种子（graine）都种不好，你还敢说自己懂园艺？",
+        "en": "You can’t even plant a single seed (graine) right, and you dare call yourself a gardener?",
+        "ja": "一粒（ひとつぶ）の種（たね）も上手（うま）く植（う）えられないくせに、園芸（えんげい）知（し）ってるなんて言（い）うなよ！"
+      }
+    ],
+    "synonyms": [
+      {
+        "word": "semence",
+        "definitionCn": "种子，通常指用于播种的植物种子",
+        "definitionJp": "種（たね）、特に（とくに）播（ま）くための植物（しょくぶつ）の種（たね）"
+      },
+      {
+        "word": "pépin",
+        "definitionCn": "水果的籽，比如苹果或橙子里的",
+        "definitionJp": "果物（くだもの）の種（たね）、例えば（たとえば）リンゴやオレンジの中（なか）の"
+      },
+      {
+        "word": "germe",
+        "definitionCn": "胚芽，种子里的生命起点",
+        "definitionJp": "胚芽（はいが）、種（たね）の中（なか）の命（いのち）の始（はじ）まり"
+      },
+      {
+        "word": "noyau",
+        "definitionCn": "果核，比如桃子的硬核",
+        "definitionJp": "硬（かた）い種（たね）、例えば（たとえば）モモの中（なか）の"
+      }
+    ],
     "tags": [
       "种子",
       "谷物",
@@ -20,9 +57,7 @@
       "法语",
       "农业"
     ],
-    "_loading": true,
-    "_loadPhase": 70,
-    "_loadMsg": "发音指导完成，正在生成例句和近义词…"
+    "_loadPhase": 100
   },
   {
     "id": "1",
