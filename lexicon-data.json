@@ -2,21 +2,27 @@
   {
     "id": "mrgrgumx70gq5l",
     "word": "Funds",
-    "ipa": "",
-    "chinesePhonetic": "",
-    "japaneseRomaji": "",
-    "definitionCn": "",
-    "definitionJp": "",
+    "ipa": "fʌndz",
+    "chinesePhonetic": "凡兹",
+    "japaneseRomaji": "fandazu",
+    "definitionCn": "资金；基金；现金",
+    "definitionJp": "資金（しきん）；基金（ききん）；現金（げんきん）",
     "detailedPhonetic": "",
     "mouthShape": "",
     "voiceTechnique": "",
     "usageContext": "",
     "sentences": [],
     "synonyms": [],
-    "tags": [],
+    "tags": [
+      "金融",
+      "财务",
+      "资金管理",
+      "投资",
+      "经济"
+    ],
     "_loading": true,
-    "_phase": 5,
-    "_msg": "加载释义…"
+    "_phase": 40,
+    "_msg": "发音指导…"
   },
   {
     "id": "1",
