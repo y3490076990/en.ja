@@ -2,21 +2,27 @@
   {
     "id": "mrgqem5l7dyxwv",
     "word": "budget",
-    "ipa": "",
-    "chinesePhonetic": "",
-    "japaneseRomaji": "",
-    "definitionCn": "",
-    "definitionJp": "",
+    "ipa": "/ˈbʌdʒɪt/",
+    "chinesePhonetic": "巴杰特",
+    "japaneseRomaji": "bajetto",
+    "definitionCn": "预算，指预先计划好的一笔钱或花费安排",
+    "definitionJp": "予算(よさん)、お金(かね)の使(つか)い方(かた)を事前(じぜん)に計画(けいかく)すること",
     "detailedPhonetic": "",
     "mouthShape": "",
     "voiceTechnique": "",
     "usageContext": "",
     "sentences": [],
     "synonyms": [],
-    "tags": [],
+    "tags": [
+      "财务",
+      "计划",
+      "支出",
+      "管理",
+      "节俭"
+    ],
     "_loading": true,
-    "_loadPhase": 5,
-    "_loadMsg": "正在加载中文释义…"
+    "_loadPhase": 40,
+    "_loadMsg": "释义完成，正在加载发音指导…"
   },
   {
     "id": "mrgqb9ch6vdbyc",
