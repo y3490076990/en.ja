@@ -1,79 +1,123 @@
 [
   {
-    "id": "mrgrgumx70gq5l",
-    "word": "Funds",
-    "ipa": "fʌndz",
-    "chinesePhonetic": "凡兹",
-    "japaneseRomaji": "fandazu",
-    "definitionCn": "资金；基金；现金",
-    "definitionJp": "資金（しきん）；基金（ききん）；現金（げんきん）",
-    "detailedPhonetic": {
-      "word": "Funds",
-      "pronunciation": "/fʌndz/",
-      "syllable": "1个音节",
-      "phoneticBreakdown": {
-        "initial": "/f/",
-        "vowel": "/ʌ/",
-        "final": "/ndz/"
-      }
-    },
-    "mouthShape": {
-      "initial_f": "上齿轻触下唇，气流从唇齿间挤出，声带不振动",
-      "vowel_ʌ": "嘴巴半开，舌头平放中部，嘴唇放松不圆，类似中文‘啊’但更短促",
-      "final_ndz": "舌尖抵上齿龈发/n/，然后迅速过渡到/dz/（舌尖抵上齿龈阻塞气流后爆破，声带振动），最后舌尖保持位置发/z/（气流持续摩擦）"
-    },
-    "voiceTechnique": {
-      "initial_f": "清辅音，声带不振动，气流持续",
-      "vowel_ʌ": "短元音，声带振动，声音集中在中部",
-      "final_ndz": "浊辅音组合，声带持续振动，注意/dz/的爆破和摩擦连贯"
-    },
-    "usageContext": "常用于金融或商业语境，表示资金或基金。例句：'The company needs more funds.'（公司需要更多资金。）发音时注意结尾/dz/清晰，避免吞音。",
+    "id": "mrgqem5l7dyxwv",
+    "word": "budget",
+    "ipa": "/ˈbʌdʒɪt/",
+    "chinesePhonetic": "巴杰特",
+    "japaneseRomaji": "bajetto",
+    "definitionCn": "预算，指预先计划好的一笔钱或花费安排",
+    "definitionJp": "予算(よさん)、お金(かね)の使(つか)い方(かた)を事前(じぜん)に計画(けいかく)すること",
+    "detailedPhonetic": "ˈbʌdʒɪt (巴-鸡特，重音在第一个音节)",
+    "mouthShape": "发‘巴’时双唇微张，舌尖抵下齿，然后快速过渡到‘鸡’，舌尖抬起抵住上齿龈，最后‘特’舌尖轻弹上齿龈后放开",
+    "voiceTechnique": "先短促有力地发‘巴’，声带振动，然后迅速转为轻快的‘鸡’，结尾‘特’需清脆不拖音",
+    "usageContext": "日常财务讨论、商务会议、旅行计划等场合",
     "sentences": [
       {
-        "zh": "你这笔资金到底什么时候到位？别整天光说不练！",
-        "en": "When is this damn fund going to come through? Stop talking and do something!",
-        "ja": "この資金（しきん）、いつになったら入金（にゅうきん）されるんだよ？毎日（まいにち）口（くち）だけじゃねえか！"
+        "zh": "你那个预算根本不够，别做梦了！",
+        "en": "Your budget is way too low, stop dreaming!",
+        "ja": "その予算（よさん）じゃ全然（ぜんぜん）足（た）りないよ、夢（ゆめ）を見（み）るな！"
       },
       {
-        "zh": "你管好你自己的资金，少在这里指手画脚！",
-        "en": "Mind your own funds and stop bossing me around here!",
-        "ja": "自分の（じぶんの）資金（しきん）をちゃんと管理（かんり）しろよ、余計（よけい）な口出（くちだ）しすんな！"
+        "zh": "我说了要控制预算，你怎么又乱花钱？",
+        "en": "I told you to stick to the budget, why are you wasting money again?",
+        "ja": "予算（よさん）を守（まも）れって言（い）ったのに、また無駄遣（むだづか）いしてるの？"
       },
       {
-        "zh": "这项目资金被你们搞得一团糟，还敢推卸责任？",
-        "en": "You guys messed up the project funds and still dare to shift the blame?",
-        "ja": "このプロジェクトの資金（しきん）、お前（まえ）らがめちゃくちゃにしといて、責任（せきにん）逃（のが）れしようってか？"
+        "zh": "这点预算连买个面包都不够，你开什么玩笑？",
+        "en": "This budget can't even buy a loaf of bread, are you kidding me?",
+        "ja": "こんな予算（よさん）じゃパンひとつ買（か）えないよ、冗談（じょうだん）でしょ？"
       }
     ],
     "synonyms": [
       {
-        "word": "资金",
-        "definitionCn": "指用于经营或投资的款项，类似经费或资本。",
-        "definitionJp": "経営（けいえい）や投資（とうし）に使（つか）うお金（かね）のこと、経費（けいひ）や資本（しほん）に似（に）てる。"
+        "word": "funds",
+        "definitionCn": "资金，指可用的钱",
+        "definitionJp": "資金（しきん）、使（つか）えるお金（かね）のこと"
       },
       {
-        "word": "经费",
-        "definitionCn": "指为特定目的而支出的费用，比资金更侧重日常开销。",
-        "definitionJp": "特定（とくてい）の目的（もくてき）のために使（つか）われる費用（ひよう）で、資金（しきん）より日常的（にちじょうてき）な出費（しゅっぴ）に重（おも）きを置（お）く。"
+        "word": "allowance",
+        "definitionCn": "限额，指被允许花的钱",
+        "definitionJp": "許容額（きょようがく）、使（つか）っていいお金（かね）の上限（じょうげん）"
       },
       {
-        "word": "资本",
-        "definitionCn": "指可用于生产或投资的财富，强调增值目的。",
-        "definitionJp": "生産（せいさん）や投資（とうし）に使（つか）える富（とみ）で、増加（ぞうか）させる目的（もくてき）を強調（きょうちょう）する。"
+        "word": "cost plan",
+        "definitionCn": "成本计划，指花钱的详细安排",
+        "definitionJp": "費用計画（ひようけいかく）、お金（かね）の使（つか）い方（かた）の詳（くわ）しい計画（けいかく）"
       },
       {
-        "word": "款项",
-        "definitionCn": "指一笔具体的钱，多用于正式场合。",
-        "definitionJp": "具体的（ぐたいてき）な一（ひと）まとまりのお金（かね）で、公式（こうしき）な場面（ばめん）でよく使（つか）われる。"
+        "word": "spending limit",
+        "definitionCn": "支出上限，指不能超过的钱数",
+        "definitionJp": "支出上限（ししゅつじょうげん）、超（こ）えてはいけないお金（かね）の額（がく）"
       }
     ],
     "tags": [
-      "金融",
       "财务",
-      "资金管理",
-      "投资",
-      "经济"
-    ]
+      "计划",
+      "支出",
+      "管理",
+      "节俭"
+    ],
+    "_loadPhase": 100
+  },
+  {
+    "id": "mrgqb9ch6vdbyc",
+    "word": "graine",
+    "ipa": "/ɡʁɛn/",
+    "chinesePhonetic": "格海讷",
+    "japaneseRomaji": "guren",
+    "definitionCn": "种子，谷粒；根源，起因",
+    "definitionJp": "種子(たね)、穀粒(こくりゅう)；原因(げんいん)、根源(こんげん)",
+    "detailedPhonetic": "ɡʁɛn（格-哼，重音在格）",
+    "mouthShape": "先发“格”音，舌根抬起；再发“哼”音，舌尖抵下齿，口型略圆",
+    "voiceTechnique": "法语小舌音，气流从喉咙小舌处摩擦发出，类似漱口声，但更轻柔",
+    "usageContext": "用于法语单词或名称的发音指导，如种子、颗粒等含义",
+    "sentences": [
+      {
+        "zh": "你撒的种子（graine）根本长不出好结果，别白费力气了！",
+        "en": "The seeds (graine) you planted won’t grow into anything good, stop wasting your effort!",
+        "ja": "お前（まえ）が撒（ま）いた種（たね）なんて、いい結果（けっか）出（だ）せないよ、無駄（むだ）だって！"
+      },
+      {
+        "zh": "这粒种子（graine）是坏的，就像你的主意一样，别拿来糊弄人！",
+        "en": "This seed (graine) is rotten, just like your idea—don’t try to fool anyone with it!",
+        "ja": "この種（たね）は腐（くさ）ってる、お前（まえ）のアイデアみたいにさ、ごまかすなよ！"
+      },
+      {
+        "zh": "连一颗种子（graine）都种不好，你还敢说自己懂园艺？",
+        "en": "You can’t even plant a single seed (graine) right, and you dare call yourself a gardener?",
+        "ja": "一粒（ひとつぶ）の種（たね）も上手（うま）く植（う）えられないくせに、園芸（えんげい）知（し）ってるなんて言（い）うなよ！"
+      }
+    ],
+    "synonyms": [
+      {
+        "word": "semence",
+        "definitionCn": "种子，通常指用于播种的植物种子",
+        "definitionJp": "種（たね）、特に（とくに）播（ま）くための植物（しょくぶつ）の種（たね）"
+      },
+      {
+        "word": "pépin",
+        "definitionCn": "水果的籽，比如苹果或橙子里的",
+        "definitionJp": "果物（くだもの）の種（たね）、例えば（たとえば）リンゴやオレンジの中（なか）の"
+      },
+      {
+        "word": "germe",
+        "definitionCn": "胚芽，种子里的生命起点",
+        "definitionJp": "胚芽（はいが）、種（たね）の中（なか）の命（いのち）の始（はじ）まり"
+      },
+      {
+        "word": "noyau",
+        "definitionCn": "果核，比如桃子的硬核",
+        "definitionJp": "硬（かた）い種（たね）、例えば（たとえば）モモの中（なか）の"
+      }
+    ],
+    "tags": [
+      "种子",
+      "谷物",
+      "根源",
+      "法语",
+      "农业"
+    ],
+    "_loadPhase": 100
   },
   {
     "id": "1",
@@ -219,6 +263,82 @@
       "逻辑",
       "辩论",
       "批判思维"
+    ]
+  },
+  {
+    "id": "mrgrgumx70gq5l",
+    "word": "Funds",
+    "ipa": "fʌndz",
+    "chinesePhonetic": "凡兹",
+    "japaneseRomaji": "fandazu",
+    "definitionCn": "资金；基金；现金",
+    "definitionJp": "資金（しきん）；基金（ききん）；現金（げんきん）",
+    "detailedPhonetic": {
+      "word": "Funds",
+      "pronunciation": "/fʌndz/",
+      "syllable": "1个音节",
+      "phoneticBreakdown": {
+        "initial": "/f/",
+        "vowel": "/ʌ/",
+        "final": "/ndz/"
+      }
+    },
+    "mouthShape": {
+      "initial_f": "上齿轻触下唇，气流从唇齿间挤出，声带不振动",
+      "vowel_ʌ": "嘴巴半开，舌头平放中部，嘴唇放松不圆，类似中文‘啊’但更短促",
+      "final_ndz": "舌尖抵上齿龈发/n/，然后迅速过渡到/dz/（舌尖抵上齿龈阻塞气流后爆破，声带振动），最后舌尖保持位置发/z/（气流持续摩擦）"
+    },
+    "voiceTechnique": {
+      "initial_f": "清辅音，声带不振动，气流持续",
+      "vowel_ʌ": "短元音，声带振动，声音集中在中部",
+      "final_ndz": "浊辅音组合，声带持续振动，注意/dz/的爆破和摩擦连贯"
+    },
+    "usageContext": "常用于金融或商业语境，表示资金或基金。例句：'The company needs more funds.'（公司需要更多资金。）发音时注意结尾/dz/清晰，避免吞音。",
+    "sentences": [
+      {
+        "zh": "你这笔资金到底什么时候到位？别整天光说不练！",
+        "en": "When is this damn fund going to come through? Stop talking and do something!",
+        "ja": "この資金（しきん）、いつになったら入金（にゅうきん）されるんだよ？毎日（まいにち）口（くち）だけじゃねえか！"
+      },
+      {
+        "zh": "你管好你自己的资金，少在这里指手画脚！",
+        "en": "Mind your own funds and stop bossing me around here!",
+        "ja": "自分の（じぶんの）資金（しきん）をちゃんと管理（かんり）しろよ、余計（よけい）な口出（くちだ）しすんな！"
+      },
+      {
+        "zh": "这项目资金被你们搞得一团糟，还敢推卸责任？",
+        "en": "You guys messed up the project funds and still dare to shift the blame?",
+        "ja": "このプロジェクトの資金（しきん）、お前（まえ）らがめちゃくちゃにしといて、責任（せきにん）逃（のが）れしようってか？"
+      }
+    ],
+    "synonyms": [
+      {
+        "word": "资金",
+        "definitionCn": "指用于经营或投资的款项，类似经费或资本。",
+        "definitionJp": "経営（けいえい）や投資（とうし）に使（つか）うお金（かね）のこと、経費（けいひ）や資本（しほん）に似（に）てる。"
+      },
+      {
+        "word": "经费",
+        "definitionCn": "指为特定目的而支出的费用，比资金更侧重日常开销。",
+        "definitionJp": "特定（とくてい）の目的（もくてき）のために使（つか）われる費用（ひよう）で、資金（しきん）より日常的（にちじょうてき）な出費（しゅっぴ）に重（おも）きを置（お）く。"
+      },
+      {
+        "word": "资本",
+        "definitionCn": "指可用于生产或投资的财富，强调增值目的。",
+        "definitionJp": "生産（せいさん）や投資（とうし）に使（つか）える富（とみ）で、増加（ぞうか）させる目的（もくてき）を強調（きょうちょう）する。"
+      },
+      {
+        "word": "款项",
+        "definitionCn": "指一笔具体的钱，多用于正式场合。",
+        "definitionJp": "具体的（ぐたいてき）な一（ひと）まとまりのお金（かね）で、公式（こうしき）な場面（ばめん）でよく使（つか）われる。"
+      }
+    ],
+    "tags": [
+      "金融",
+      "财务",
+      "资金管理",
+      "投资",
+      "经济"
     ]
   }
 ]
