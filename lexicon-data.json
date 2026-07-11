@@ -7,10 +7,10 @@
     "japaneseRomaji": "guren",
     "definitionCn": "种子，谷粒；根源，起因",
     "definitionJp": "種子(たね)、穀粒(こくりゅう)；原因(げんいん)、根源(こんげん)",
-    "detailedPhonetic": "",
-    "mouthShape": "",
-    "voiceTechnique": "",
-    "usageContext": "",
+    "detailedPhonetic": "ɡʁɛn（格-哼，重音在格）",
+    "mouthShape": "先发“格”音，舌根抬起；再发“哼”音，舌尖抵下齿，口型略圆",
+    "voiceTechnique": "法语小舌音，气流从喉咙小舌处摩擦发出，类似漱口声，但更轻柔",
+    "usageContext": "用于法语单词或名称的发音指导，如种子、颗粒等含义",
     "sentences": [],
     "synonyms": [],
     "tags": [
@@ -21,8 +21,8 @@
       "农业"
     ],
     "_loading": true,
-    "_loadPhase": 40,
-    "_loadMsg": "释义完成，正在加载发音指导…"
+    "_loadPhase": 70,
+    "_loadMsg": "发音指导完成，正在生成例句和近义词…"
   },
   {
     "id": "1",
