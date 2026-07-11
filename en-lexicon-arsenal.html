@@ -40,6 +40,8 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 #backup-bar button:hover{border-color:var(--accent);color:var(--accent)}
 #backup-bar button.bb-export{background:var(--accent-dim);color:var(--accent);border-color:transparent}
 #backup-bar button.bb-export:hover{background:var(--accent);color:#e0e0e8}
+#backup-bar .bb-sync{font-size:0.64rem;color:var(--green)}
+#backup-bar .bb-sync.error{color:var(--red)}
 .word-item{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:7px;cursor:pointer;transition:background 0.15s;margin-bottom:1px;font-size:0.9rem}
 .word-item:hover{background:var(--accent-dim)}.word-item.active{background:var(--accent-dim);border-left:2px solid var(--accent);padding-left:8px}
 .word-item .wi-word{font-weight:600;color:var(--text-strong)}.word-item .wi-def{font-size:0.72rem;color:var(--text-muted);margin-left:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px}
@@ -176,7 +178,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 <!-- 词汇模式 -->
 <div id="vocab-panel">
 <div id="search-row"><input type="text" id="search-input" placeholder="输入英语单词搜索或按 Enter AI 添加…" autocomplete="off"><button id="btn-ai-search">AI 添加</button></div>
-<div id="ai-hint"></div><div id="word-count"></div><div id="word-list"></div><div id="backup-bar"><span class="bb-stat" id="bb-stat"></span><button class="bb-export" id="btn-export" title="导出全部数据为JSON文件">📥 导出</button><button id="btn-import" title="从JSON文件导入数据">📤 导入</button><input type="file" id="import-file" accept=".json" style="display:none"></div>
+<div id="ai-hint"></div><div id="word-count"></div><div id="word-list"></div><div id="backup-bar"><span class="bb-stat" id="bb-stat"></span><button class="bb-export" id="btn-export" title="导出全部数据为JSON文件">📥 导出</button><button id="btn-import" title="从JSON文件导入数据">📤 导入</button><span class="bb-sync" id="bb-sync"></span><input type="file" id="import-file" accept=".json" style="display:none"></div>
 </div>
 
 <!-- 句子翻译模式 -->
@@ -221,7 +223,8 @@ var SKEY='la_v7',TKEY='la_theme',AK='sk-76c3bb6aad8e4a2bbce94271bf74d266',API='h
 var words=[],activeId=null,editMode=false,editId=null,apiBusy=false,currentMode='vocab';
 var popoverWord=null;
 
-var $l=document.getElementById('word-list'),$c=document.getElementById('word-count'),$s=document.getElementById('search-input'),$h=document.getElementById('ai-hint'),$b=document.getElementById('btn-ai-search'),$d=document.getElementById('detail'),$e=document.getElementById('empty-state'),$f=document.getElementById('fab'),$t=document.getElementById('toast'),$o=document.getElementById('modal-overlay'),$mt=document.getElementById('modal-title'),$bs=document.getElementById('btn-save'),$bc=document.getElementById('btn-cancel'),$bd=document.getElementById('btn-delete'),$dc=document.getElementById('delete-confirm'),$cd=document.getElementById('confirm-delete'),$cx=document.getElementById('cancel-delete'),$th=document.getElementById('theme-toggle'),$st=document.getElementById('sentence-toggle'),$si=document.getElementById('sentence-inputs'),$vp=document.getElementById('vocab-panel'),$sp=document.getElementById('sentence-panel'),$siw=document.getElementById('sent-input'),$bt=document.getElementById('btn-translate'),$sr=document.getElementById('sent-result'),$pp=document.getElementById('word-popover'),$bb=document.getElementById('bb-stat'),$be=document.getElementById('btn-export'),$bi=document.getElementById('btn-import'),$if=document.getElementById('import-file');
+var $l=document.getElementById('word-list'),$c=document.getElementById('word-count'),$s=document.getElementById('search-input'),$h=document.getElementById('ai-hint'),$b=document.getElementById('btn-ai-search'),$d=document.getElementById('detail'),$e=document.getElementById('empty-state'),$f=document.getElementById('fab'),$t=document.getElementById('toast'),$o=document.getElementById('modal-overlay'),$mt=document.getElementById('modal-title'),$bs=document.getElementById('btn-save'),$bc=document.getElementById('btn-cancel'),$bd=document.getElementById('btn-delete'),$dc=document.getElementById('delete-confirm'),$cd=document.getElementById('confirm-delete'),$cx=document.getElementById('cancel-delete'),$th=document.getElementById('theme-toggle'),$st=document.getElementById('sentence-toggle'),$si=document.getElementById('sentence-inputs'),$vp=document.getElementById('vocab-panel'),$sp=document.getElementById('sentence-panel'),$siw=document.getElementById('sent-input'),$bt=document.getElementById('btn-translate'),$sr=document.getElementById('sent-result'),$pp=document.getElementById('word-popover'),$bb=document.getElementById('bb-stat'),$be=document.getElementById('btn-export'),$bi=document.getElementById('btn-import'),$if=document.getElementById('import-file'),$bsync=document.getElementById('bb-sync');
+var GITHUB_REPO='y3490076990/en.ja',GITHUB_PATH='lexicon-data.json',GITHUB_TOKEN='';
 var F={w:document.getElementById('f-word'),ipa:document.getElementById('f-ipa'),cn:document.getElementById('f-cn'),jp:document.getElementById('f-jp'),dcn:document.getElementById('f-def-cn'),djp:document.getElementById('f-def-jp'),dp:document.getElementById('f-detailed-phonetic'),mo:document.getElementById('f-mouth-shape'),vo:document.getElementById('f-voice-technique'),us:document.getElementById('f-usage'),sz:document.getElementById('f-s-zh'),se:document.getElementById('f-s-en'),sj:document.getElementById('f-s-ja'),tg:document.getElementById('f-tags'),sy:document.getElementById('f-synonyms')};
 
 // ═══════ 预设数据（精简7词） ═══════
@@ -229,7 +232,7 @@ var DEF=[{id:'1',word:'sovereignty',ipa:'/ˈsɒv.rɪn.ti/',chinesePhonetic:'索�
 
 function esc(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function gid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8);}
-function save(){localStorage.setItem(SKEY,JSON.stringify(words));}
+function save(){localStorage.setItem(SKEY,JSON.stringify(words));syncToGitHub();}
 function loadW(){var r=localStorage.getItem(SKEY);if(r){try{words=JSON.parse(r);}catch(e){words=[];}}if(!words||!words.length){words=DEF.slice();save();}}
 function furi(t){if(!t)return'';return String(t).replace(/([\u4e00-\u9fff\u3400-\u4dbf]+)\(([\u3040-\u309f\u30a0-\u30ff\u30fc]+)\)/g,'<ruby>$1<rt>$2</rt></ruby>');}
 var tt=null;
@@ -388,15 +391,22 @@ $st.addEventListener('click',function(){$st.classList.toggle('open');$si.classLi
 document.addEventListener('click',function(e){if($pp.style.display==='block'&&!$pp.contains(e.target)&&!e.target.classList.contains('clickable-word'))closePopover();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){if($o.classList.contains('open'))closeModal();else if($pp.style.display==='block')closePopover();else$s.focus();}if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();$s.focus();}});
 
-loadW();loadTheme();renderList('');if(words.length)selectWord(words[0].id);
+loadW();loadTheme();loadGitHubToken();renderList('');if(words.length)selectWord(words[0].id);
 
 // ═══════ 备份：导出/导入 ═══════
-function updateBackupBar(){var total=words.length;var jsonSize=(new Blob([JSON.stringify(words)])).size;var sizeStr=jsonSize<1024?jsonSize+' B':jsonSize<1048576?(jsonSize/1024).toFixed(1)+' KB':(jsonSize/1048576).toFixed(1)+' MB';$bb.textContent=total+' 词 · '+sizeStr+' · 存储于浏览器 localStorage';}
+function updateBackupBar(){var total=words.length;var jsonSize=(new Blob([JSON.stringify(words)])).size;var sizeStr=jsonSize<1024?jsonSize+' B':jsonSize<1048576?(jsonSize/1024).toFixed(1)+' KB':(jsonSize/1048576).toFixed(1)+' MB';$bb.textContent=total+' 词 · '+sizeStr+' · localStorage';if(GITHUB_TOKEN){$bsync.textContent='☁️ GitHub 同步中…';$bsync.className='bb-sync';}else{$bsync.textContent='🔐 点击设置 GitHub 同步';$bsync.className='bb-sync';$bsync.style.cursor='pointer';$bsync.title='设置 GitHub Token 后自动同步到云端';}}
 function exportData(){var blob=new Blob([JSON.stringify(words,null,2)],{type:'application/json'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='lexicon-arsenal-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);toast('📥 已导出 '+words.length+' 个单词的备份文件');}
+
+// ═══════ GitHub 自动同步 ═══════
+function loadGitHubToken(){GITHUB_TOKEN=localStorage.getItem('la_gh_token')||'';}
+function setGitHubToken(){var t=prompt('请输入 GitHub Personal Access Token（需要 Contents 读写权限）：\n\n去 github.com → Settings → Developer settings → Personal access tokens → Fine-grained tokens 创建\n\n仓库选 y3490076990/en.ja\n权限选 Contents: Read and Write\n\n（token 会保存在浏览器 localStorage 中）',GITHUB_TOKEN);if(t&&t.trim()){GITHUB_TOKEN=t.trim();localStorage.setItem('la_gh_token',GITHUB_TOKEN);toast('🔐 GitHub Token 已保存，开始同步…');syncToGitHub(true);}else if(t===null){/* cancelled */}else{GITHUB_TOKEN='';localStorage.removeItem('la_gh_token');toast('🔐 GitHub Token 已清除');}updateBackupBar();}
+function syncToGitHub(force){if(!GITHUB_TOKEN)return;if(!force&&window._syncTimeout){clearTimeout(window._syncTimeout);window._syncTimeout=setTimeout(doSync,2000);return;}if(force){doSync();}else{window._syncTimeout=setTimeout(doSync,2000);}}
+function doSync(){if(!GITHUB_TOKEN)return;$bsync.textContent='☁️ 同步中…';$bsync.className='bb-sync';var content=btoa(unescape(encodeURIComponent(JSON.stringify(words,null,2))));var getUrl='https://api.github.com/repos/'+GITHUB_REPO+'/contents/'+GITHUB_PATH;fetch(getUrl,{headers:{'Authorization':'Bearer '+GITHUB_TOKEN,'Accept':'application/vnd.github+json'}}).then(function(r){if(r.status===404)return{};if(!r.ok)throw new Error('GitHub API: '+r.status);return r.json();}).then(function(d){var body={message:'auto-save: '+words.length+' words',content:content};if(d.sha)body.sha=d.sha;return fetch(getUrl,{method:'PUT',headers:{'Authorization':'Bearer '+GITHUB_TOKEN,'Accept':'application/vnd.github+json','Content-Type':'application/json'},body:JSON.stringify(body)});}).then(function(r){if(!r.ok)throw new Error('GitHub PUT: '+r.status);return r.json();}).then(function(){var now=new Date().toLocaleTimeString();$bsync.textContent='☁️ 已同步 '+now;$bsync.className='bb-sync';}).catch(function(err){console.error('GitHub sync:',err);$bsync.textContent='⚠️ 同步失败: '+err.message;$bsync.className='bb-sync error';});}
 function importData(file){if(!file)return;var reader=new FileReader();reader.onload=function(e){try{var data=JSON.parse(e.target.result);if(!Array.isArray(data))throw new Error('格式错误');var merged=confirm('检测到 '+data.length+' 个单词。\n\n「确定」= 合并入现有词库（同名覆盖）\n「取消」= 替换全部数据');if(merged){var map={};words.forEach(function(w){map[w.word.toLowerCase()]=w;});data.forEach(function(w){map[w.word.toLowerCase()]=w;});words=Object.values(map);}else{words=data;}save();renderList('');if(words.length)selectWord(words[0].id);$l.scrollTop=0;toast('📤 已导入 '+(merged?'合并':'替换')+'完成：'+words.length+' 个单词');}catch(err){toast('❌ 导入失败：文件格式不正确',true);}};reader.readAsText(file);}
 $be.addEventListener('click',exportData);
 $bi.addEventListener('click',function(){$if.click();});
 $if.addEventListener('change',function(){if(this.files&&this.files[0]){importData(this.files[0]);this.value='';}});
+$bsync.addEventListener('click',function(){if(!GITHUB_TOKEN)setGitHubToken();else if(confirm('已设置 GitHub Token。\n\n确定=重新设置  |  取消=手动同步一次')){setGitHubToken();}else{syncToGitHub(true);}});
 })();
 </script>
 </body>
