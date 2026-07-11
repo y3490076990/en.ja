@@ -1,5 +1,30 @@
 [
   {
+    "id": "mrgqb9ch6vdbyc",
+    "word": "graine",
+    "ipa": "/ɡʁɛn/",
+    "chinesePhonetic": "格海讷",
+    "japaneseRomaji": "guren",
+    "definitionCn": "种子，谷粒；根源，起因",
+    "definitionJp": "種子(たね)、穀粒(こくりゅう)；原因(げんいん)、根源(こんげん)",
+    "detailedPhonetic": "",
+    "mouthShape": "",
+    "voiceTechnique": "",
+    "usageContext": "",
+    "sentences": [],
+    "synonyms": [],
+    "tags": [
+      "种子",
+      "谷物",
+      "根源",
+      "法语",
+      "农业"
+    ],
+    "_loading": true,
+    "_loadPhase": 40,
+    "_loadMsg": "释义完成，正在加载发音指导…"
+  },
+  {
     "id": "1",
     "word": "sovereignty",
     "ipa": "/ˈsɒv.rɪn.ti/",
